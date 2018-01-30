@@ -1,0 +1,30 @@
+<div class="modal fade" id="register_course" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+        <h4 class="modal-title" id="myModalLabel">Register for a Course</h4>
+      </div>
+      <div class="modal-body">
+        <div class="row">
+          <div class="col-lg-12">
+            <div class="pricing-option">
+              <ul>
+                <form accept-charset="UTF-8" action="/register" method="post"><div style="margin:0;padding:0;display:inline"><input name="utf8" type="hidden" value="✓"><input name="authenticity_token" type="hidden" value="oYcn5Z8ezohgZ5LRhnC40lQUjrVavdnN0hPaimRQduQ="></div>
+                  Name:  <li><input id="user_name" name="user[name]" type="text"><br></li>
+                  Email ID:<li><input id="user_email_id" name="user[email_id]" type="email"></li>
+                  Phone :<li><input id="user_phone" name="user[phone]" type="tel"></li>
+                  Course :<li><input id="course_field" name="user[course]" type="text"></li>
+                  Message<li><textarea cols="50X30" id="user_message" name="user[message]">Hi, I'm interested to register/know more details about this course</textarea></li>
+                  <li><input name="commit" type="submit" value="Submit"></li>
+                </form>               </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
+      </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+  </div>
