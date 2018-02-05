@@ -17,7 +17,7 @@
  *= require_self
  */
 
- @import url(https://fonts.googleapis.com/css?family=Roboto:300);
+ /*@import url(https://fonts.googleapis.com/css?family=Roboto:300);
 
 .login-page {
   width: 360px;
@@ -111,4 +111,4 @@ body {
   font-family: "Roboto", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-}
+}*/
