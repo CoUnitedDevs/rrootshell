@@ -1,0 +1,2 @@
+class RegisterSchedule < ApplicationRecord
+end
