@@ -12,7 +12,7 @@
             <br>   <br>
             <span><%= schedule.try(:start_date) %> &nbsp;&nbsp;<small> Duration :<%= schedule.try(:duration) %> Days</small></span>
             <br>   <br>
-            <span><button class="btn_register" data-toggle="modal" data-target="#register_course" href="#myModalLabel" data-course="<%= schedule.course.name %>" data-courseid="<%= schedule.course.id %>"><i class="fa fa-hand-o-right"> Register</i></button>&nbsp;&nbsp;&nbsp; <a href="target=&quot;_blank&quot;"><i class="fa fa-book">&nbsp;Course contents</i> </a> </span>
+            <span><button class="btn_register" data-toggle="modal" data-target="#register_course" href="#myModalLabel" data-course="<%= schedule.course.name %>" data-scheduleid="<%= schedule.id %>"><i class="fa fa-hand-o-right"> Register</i></button>&nbsp;&nbsp;&nbsp; <a href="target=&quot;_blank&quot;"><i class="fa fa-book">&nbsp;Course contents</i> </a> </span>
             </div>
           </div>
         </div>
@@ -20,7 +20,7 @@
       </div>
     </div>
   </div>
-  <%= render :partial => "/courses/register"  %>
+  <%= render :partial => "/courses/register", locals: {register: @register}  %>
   <!-- MODAL FOR CONTACT -->
   <%= render :partial => "/courses/contact_model"  %>
 
@@ -29,8 +29,12 @@
   $(document).ready(function(){
     $(".btn_register").click(function(){
       console.log($(this));
-      $('#course_field').append($("<option></option>").attr("value",$(this).data('courseid')).text($(this).data('course')));
+      $('#register_schedule_id').val($(this).data('scheduleid'));
+      $('#register_course_name').val($(this).data('course'));
     });
 
+    $("#my-form").submit(function(){
+      alert('afsdsf');
+    });
   });
 </script>

@@ -6,6 +6,7 @@ class SchedulesController < ApplicationController
   # GET /schedules.json
   def index
     @schedules = Schedule.all
+    @register = Register.new
   end
 
   # GET /schedules/1
