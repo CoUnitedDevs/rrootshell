@@ -15,4 +15,5 @@
 //= require bootstrap.min
 //= require Chart
 //= require turbolinks
+//= require jquery_nested_form
 //= require_tree .

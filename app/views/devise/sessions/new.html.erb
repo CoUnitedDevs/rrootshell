@@ -1,6 +1,10 @@
-<div>
+<div class = "row">
 
 <div class="login-page">
+  </br></br></br>
+  <div class = "col-sm-4">
+  </div>
+  <div class = "col-sm-4">
     <form class="login-form">
       <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
       <%= f.email_field :email, autofocus: true, autocomplete: "email", class: 'form-control'%></br>
@@ -13,14 +17,22 @@
         <% end -%>
 
         <div class="actions">
-          <%= f.submit "Log in" , class: 'form-control'%>
+          <%= f.submit "Log in" , class: 'form-control btn btn-primary'%>
         </div>
       <% end %>
     </form>
+  </div>
+  <div class="col-sm-4">
+  </div>
+</div>
+</div>
+<div class = "row">
+  <div class = "col-sm-4">
+  </div>
+  <div class = "col-sm-6">
     <%= render "devise/shared/links" %>
   </div>
 </div>
-
 <script>
 $('.message a').click(function(){
    $('form').animate({height: "toggle", opacity: "toggle"}, "slow");

@@ -11,12 +11,12 @@
             <div class="pricing-option">
               <ul>
                 <form accept-charset="UTF-8" action="/register" method="post"><div style="margin:0;padding:0;display:inline"><input name="utf8" type="hidden" value="✓"><input name="authenticity_token" type="hidden" value="oYcn5Z8ezohgZ5LRhnC40lQUjrVavdnN0hPaimRQduQ="></div>
-                  Name:  <li><input id="user_name" name="user[name]" type="text"><br></li>
-                  Email ID:<li><input id="user_email_id" name="user[email_id]" type="email"></li>
-                  Phone :<li><input id="user_phone" name="user[phone]" type="tel"></li>
-                  Course :<li><input id="course_field" name="user[course]" type="text"></li>
-                  Message<li><textarea cols="50X30" id="user_message" name="user[message]">Hi, I'm interested to register/know more details about this course</textarea></li>
-                  <li><input name="commit" type="submit" value="Submit"></li>
+                  <div class="col-sm-3">Name:  </div><div class="col-sm-9"><input id="user_name" name="user[name]" type="text" class="form-control"></div></br></br>
+                  <div class="col-sm-3">Email ID:</div><div class="col-sm-9"><input id="user_email_id" name="user[email_id]" type="email" class="form-control"></div></br></br>
+                  <div class="col-sm-3">Phone :</div><div class="col-sm-9"><input id="user_phone" name="user[phone]" type="tel" class="form-control"></div></br></br>
+                  <div class="col-sm-3">Course :</div><div class="col-sm-9"><select id="course_field" name="user[course]" class="form-control"></select></div></br></br>
+                  <div class="col-sm-12"><textarea cols="50X30" id="user_message" name="user[message]">Hi, I'm interested to register/know more details about this course</textarea></div>
+                  <div class="col-sm-12"><input name="commit" type="submit" value="Submit" class="btn btn-primary"></div>
                 </form>               </ul>
               </div>
             </div>
