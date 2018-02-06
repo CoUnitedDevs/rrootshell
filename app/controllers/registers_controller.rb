@@ -28,6 +28,7 @@ class RegistersController < ApplicationController
 
     respond_to do |format|
       if @register.save
+        RegisteSchedule.create(register_id: @register, schedule_id: params[:register][:schedule_id])
         format.html { redirect_to '/schedules', notice: 'Register was successfully created.' }
         format.json { render :show, status: :created, location: @register }
       else
@@ -69,6 +70,6 @@ class RegistersController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def register_params
-      params.require(:register).permit(:name, :email, :phone, :message, :schedule_id)
+      params.require(:register).permit(:name, :email, :phone, :message)
     end
 end
