@@ -11,7 +11,7 @@
             <div class="pricing-option">
               <ul>
                 <div style="margin:0;padding:0;display:inline">
-                  <%= form_for( register, :url => '/registers', method: :post) do |f| %>
+                  <%= form_for :register do |f| %>
                   <div class="col-sm-3">Name:  </div><div class="col-sm-9"><%= f.text_field :name, id: "register_name", class:"form-control"%>
                   <%= hidden_field 'register[schedule_id]','', id: "register_schedule_id", class:"form-control"%></br></div>
                   <div class="col-sm-3">Email ID:</div><div class="col-sm-9"><%= f.text_field :email, id:"register_email_id", class:"form-control"%></br></div>
