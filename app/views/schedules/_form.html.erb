@@ -1,7 +1,7 @@
 <div id="dg">
   <div class="container">
     <div class="row centered">
-      <div class="row">
+      <!-- <div class="row"> -->
       <%= form_with(model: schedule, local: true) do |form| %>
         <% if schedule.errors.any? %>
           <div id="error_explanation">
@@ -14,40 +14,49 @@
             </ul>
           </div>
         <% end %>
-
-        <div class="col-sm-4">
+        <div class="row">
+        <div class="col-sm-4" align='right'>
           <%= form.label :duration %>
         </div>
         <div class="col-sm-6">
-          <%= form.number_field :duration, id: :schedule_duration, class: 'form-control'%>
+          <%= form.number_field :duration, id: :schedule_duration, class: 'form-control'%></br>
         </div>
-
-        <div class="col-sm-4">
+        </div>
+        <div class="row">
+        <div class="col-sm-4" align='right'>
           <%= form.label :start_date %>
         </div>
         <div class="col-sm-6">
-          <%= form.datetime_select :start_date, id: :schedule_start_date, class: 'form-control'%>
+          <%= form.datetime_field :start_date, id: :schedule_start_date, class: 'form-control'%></br>
         </div>
-
-        <div class="col-sm-4">
+        </div>
+        <div class="row">
+        <div class="col-sm-4" align='right'>
           <%= form.label :course_id %>
         </div>
         <div class="col-sm-6">
-          <%= form.number_field :course_id, id: :schedule_course_id, class: 'form-control'%>
+          <%#= form.select :course_id, id: :schedule_course_id, class: 'form-control'%>
+          <%= form.select(:course_id, Course.all.collect {|u| [u.name, u.id]}, {:prompt => 'Select'},{class: 'form-control'}) %></br>
         </div>
-
-        <div class="col-sm-4">
+        </div>
+        <div class="row">
+        <div class="col-sm-4" align='right'>
           <%= form.label :status %>
         </div>
         <div class="col-sm-6">
-          <%= form.text_field :status, id: :schedule_status, class: 'form-control'%>
+          <%#= form.text_field :status, id: :schedule_status, class: 'form-control'%>
+          <%= form.select(:status, ["NOT YET STARTED", "CONFIRMED"],{:class=>"form-control", :prompt => 'Select'},{:class=>"form-control", required: true}) %></br>
         </div>
-
-        <div class="col-sm-12">
-          <%= form.submit %>
+        </div>
+        <div class="row">
+          <div class="col-sm-4" align='right'>
+          </div>
+        <div class="col-sm-4" align='right'>
+          <%= form.submit class: 'form-control btn btn-primary'%>
+        </div>
         </div>
       <% end %>
-    </div>
+    <!-- </div> -->
     </div>
   </div>
 </div>
