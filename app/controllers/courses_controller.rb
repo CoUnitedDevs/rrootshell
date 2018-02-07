@@ -14,7 +14,7 @@ before_action :set_course, only: [:show, :edit, :update, :destroy]
 
     respond_to do |format|
       if @course.save
-        format.html { redirect_to '/courses/index', notice: 'Course was successfully created.' }
+        format.html { redirect_to '/schedules/index', notice: 'Course was successfully created.' }
         format.json { render :show, status: :created, location: @course }
       else
         format.html { render :new }
