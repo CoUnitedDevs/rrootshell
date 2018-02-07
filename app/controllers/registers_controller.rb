@@ -28,7 +28,8 @@ class RegistersController < ApplicationController
 
     respond_to do |format|
       if @register.save
-        format.html { redirect_to @register, notice: 'Register was successfully created.' }
+        RegisteSchedule.create(register_id: @register, schedule_id: params[:register][:schedule_id])
+        format.html { redirect_to '/schedules', notice: 'Register was successfully created.' }
         format.json { render :show, status: :created, location: @register }
       else
         format.html { render :new }

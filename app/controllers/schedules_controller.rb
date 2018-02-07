@@ -1,10 +1,12 @@
 class SchedulesController < ApplicationController
+  before_action :authenticate_user!, only: [:new, :create, :edit, :update, :destroy]
   before_action :set_schedule, only: [:show, :edit, :update, :destroy]
 
   # GET /schedules
   # GET /schedules.json
   def index
     @schedules = Schedule.all
+    @register = Register.new
   end
 
   # GET /schedules/1

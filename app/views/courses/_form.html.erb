@@ -1,0 +1,39 @@
+<div id="dg">
+  <div class="container">
+    <div class="row centered">
+        <%= nested_form_for @course do |f| %>
+        <div class="col-sm-4">
+          <%= f.label :name %>
+        </div>
+        <div class="col-sm-6">
+          <%= f.text_field :name, class:"gui-input form-control", placeholder:"Course Name", required: true %>
+        </div></br>
+          <%= f.fields_for :schedules do |schedule_form| %>
+            <div class="col-sm-4">
+              <%= schedule_form.label :duration %>
+            </div></br>
+            <div class="col-sm-6">
+              <%= schedule_form.text_field :duration, class: "form-control"%>
+            </div></br>
+            <div class="col-sm-4">
+              <%= schedule_form.label :Date %>
+            </div>
+            <div class="col-sm-6">
+              <%= schedule_form.datetime_field :start_date, class: "form-control"%>
+            </div></br>
+            <div class="col-sm-4">
+              <%= schedule_form.label :status %>
+            </div>
+            <div class="col-sm-6">
+              <%= schedule_form.select(:status, ["NOT YET STARTED", "CONFIRMED"],{:class=>"form-control", :prompt => 'Select'}) %>
+            </div></br>
+            <%#= schedule_form.link_to_remove "Remove this task" %>
+          <% end %>
+          <p><%= f.link_to_add "Add a task", :schedules %></p>
+          <div class="col-sm-12" align=center>
+            <%= f.submit class: 'btn btn-success' %>
+          </div>
+        <% end %>
+      </div>
+    </div>
+  </div>

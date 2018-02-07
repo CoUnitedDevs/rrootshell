@@ -1,33 +1,40 @@
-<p id="notice"><%= notice %></p>
+<div id="dg">
+  <div class="container">
+    <div class="row centered">
+      <h4>Hyderabad branch Schedules</h4>
+      <br>
+      <% @schedules.each do |schedule| %>
+      <div class="col-lg-4">
+        <div class="pricing-option">
+          <div class="pricing-top">
+            <span class="special-label"><small><%= schedule.try(:status) %></small></span>
+            <span> <%= schedule.course.name %> </span>
+            <br>   <br>
+            <span><%= schedule.try(:start_date) %> &nbsp;&nbsp;<small> Duration :<%= schedule.try(:duration) %> Days</small></span>
+            <br>   <br>
+            <span><button class="btn_register" data-toggle="modal" data-target="#register_course" href="#myModalLabel" data-course="<%= schedule.course.name %>" data-scheduleid="<%= schedule.id %>"><i class="fa fa-hand-o-right"> Register</i></button>&nbsp;&nbsp;&nbsp; <a href="target=&quot;_blank&quot;"><i class="fa fa-book">&nbsp;Course contents</i> </a> </span>
+            </div>
+          </div>
+        </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
+  <%= render :partial => "/courses/register", locals: {register: @register}  %>
+  <!-- MODAL FOR CONTACT -->
+  <%= render :partial => "/courses/contact_model"  %>
 
-<h1>Schedules</h1>
 
-<table>
-  <thead>
-    <tr>
-      <th>Duration</th>
-      <th>Start date</th>
-      <th>Course</th>
-      <th>Status</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
+  <script>
+  $(document).ready(function(){
+    $(".btn_register").click(function(){
+      console.log($(this));
+      $('#register_schedule_id').val($(this).data('scheduleid'));
+      $('#register_course_name').val($(this).data('course'));
+    });
 
-  <tbody>
-    <% @schedules.each do |schedule| %>
-      <tr>
-        <td><%= schedule.duration %></td>
-        <td><%= schedule.start_date %></td>
-        <td><%= schedule.course_id %></td>
-        <td><%= schedule.status %></td>
-        <td><%= link_to 'Show', schedule %></td>
-        <td><%= link_to 'Edit', edit_schedule_path(schedule) %></td>
-        <td><%= link_to 'Destroy', schedule, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-
-<br>
-
-<%= link_to 'New Schedule', new_schedule_path %>
+    $("#my-form").submit(function(){
+      alert('afsdsf');
+    });
+  });
+</script>
