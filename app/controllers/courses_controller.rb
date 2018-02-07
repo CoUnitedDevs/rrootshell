@@ -11,10 +11,9 @@ before_action :set_course, only: [:show, :edit, :update, :destroy]
 
   def create
     @course = Course.new(course_params)
-
     respond_to do |format|
       if @course.save
-        format.html { redirect_to '/schedules/index', notice: 'Course was successfully created.' }
+        format.html { redirect_to '/schedules', notice: 'Course was successfully created.' }
         format.json { render :show, status: :created, location: @course }
       else
         format.html { render :new }
@@ -54,7 +53,7 @@ end
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def course_params
-      params.require(:course).permit(:name, schedules_attributes: [:id, :duration, :start_date, :status])
+      params.require(:course).permit(:name, schedules_attributes: [:duration, :start_date, :status])
     end
 
 end
