@@ -13,8 +13,12 @@
     <div class="navbar-collapse collapse">
       <ul class="nav navbar-nav navbar-right">
         <li class="active"><a>Schedules</a></li>
-        <li class=""><a href="/courses/new">New Course</a></li>
         <li><a href="/education">Education</a></li>
+        <% if current_user.present? %>
+        <li class=""><a href="/courses/new">New Course</a></li>
+        <li class=""><a href="/schedules/new">New Schedule</a></li>
+        <li class=""><a href="/users/sign_out">Sign Out</a></li>
+        <% end %>
         <li><a data-toggle="modal" data-target="#myModal" href="#myModal"><i class="fa fa-envelope-o"></i></a></li>
       </ul>
     </div><!--/.nav-collapse -->

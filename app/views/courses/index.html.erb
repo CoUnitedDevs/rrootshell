@@ -4,20 +4,22 @@
       <h4>Hyderabad branch Schedules</h4>
       <br>
       <% @courses.each do |course| %>
-      <a href="/courses/<%= course.id %>/edit">
       <div class="col-lg-4">
         <div class="pricing-option">
           <div class="pricing-top">
+            <!-- <a href="/courses/<%= course.id %>/edit">
+          <div> -->
             <span class="special-label"><small><%= course.schedules.first.try(:status) %></small></span>
             <span> <%= course.name %> </span>
             <br>   <br>
             <span><%= course.schedules.first.try(:start_date) %> &nbsp;&nbsp;<small> Duration :<%= course.schedules.first.try(:duration) %> Days</small></span>
             <br>   <br>
             <span><button class="btn_register" data-toggle="modal" data-target="#register_course" href="#myModalLabel" data-course="<%= course.name %>" data-courseid="<%= course.id %>"><i class="fa fa-hand-o-right"> Register</i></button>&nbsp;&nbsp;&nbsp; <a href="target=&quot;_blank&quot;"><i class="fa fa-book">&nbsp;Course contents</i> </a> </span>
+            <!-- </div>
+          </a> -->
             </div>
           </div>
         </div>
-      </a>
         <% end %>
       </div>
     </div>
