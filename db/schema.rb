@@ -25,13 +25,6 @@ ActiveRecord::Schema.define(version: 20180205081425) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "register_shedules", force: :cascade do |t|
-    t.integer "schedule_id"
-    t.integer "register_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
   create_table "registers", force: :cascade do |t|
     t.string "name"
     t.string "email"
