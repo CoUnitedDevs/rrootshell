@@ -1,6 +1,7 @@
 <div id="dg">
   <div class="container">
     <div class="row centered">
+      <%= link_to 'Back', schedules_path ,class: 'btn btn-primary'%>
       <!-- <div class="row"> -->
       <%= form_with(model: schedule, local: true) do |form| %>
         <% if schedule.errors.any? %>
