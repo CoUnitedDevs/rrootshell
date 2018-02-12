@@ -29,7 +29,7 @@ gem "nested_form"
 # Use Unicorn as the app server
 # gem 'unicorn'
 group :production do
-  gem 'pg'
+  gem 'pg', '~> 1.0.0'
 end
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
